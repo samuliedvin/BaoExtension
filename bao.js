@@ -1,29 +1,20 @@
 const forEach = f => x => Array.prototype.forEach.call(x, f);
 
-
-
 function recursion(node) {
         var textContent = "";
         if(node.hasChildNodes()) {
                 childNodes = node.childNodes;
-                forEach((item) => {
-
-                        
+                forEach((item) => {                        
                         recursion(item);
-
                 })(childNodes);
-
         } else {
                 textContent = node.textContent;
-				node.textContent = swapB(textContent);
+		node.textContent = swapB(textContent);
         }
         
 }
 
-
-
 function swapB (text) {
-
         for (var i = 0; i < text.length; i++) {
                 switch(text.charAt(i)) {
                         case "p":
